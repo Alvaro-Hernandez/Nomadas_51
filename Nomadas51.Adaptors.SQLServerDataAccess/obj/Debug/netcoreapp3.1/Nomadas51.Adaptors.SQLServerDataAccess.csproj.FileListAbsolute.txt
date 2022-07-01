@@ -1,0 +1,16 @@
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.deps.json
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.runtimeconfig.json
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.runtimeconfig.dev.json
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.dll
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.pdb
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.dll
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.pdb
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.csproj.AssemblyReference.cache
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.AssemblyInfoInputs.cache
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.AssemblyInfo.cs
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.csproj.CopyComplete
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.dll
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.pdb
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Adaptors.SQLServerDataAccess\obj\Debug\netcoreapp3.1\Nomadas51.Adaptors.SQLServerDataAccess.genruntimeconfig.cache
