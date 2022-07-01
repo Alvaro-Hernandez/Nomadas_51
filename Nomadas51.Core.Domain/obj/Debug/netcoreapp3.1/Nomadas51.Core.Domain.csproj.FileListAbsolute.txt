@@ -1,0 +1,13 @@
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.deps.json
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.dll
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.pdb
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.csproj.AssemblyReference.cache
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.AssemblyInfo.cs
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.dll
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.pdb
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.runtimeconfig.json
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\bin\Debug\netcoreapp3.1\Nomadas51.Core.Domain.runtimeconfig.dev.json
+C:\Users\hp\Escritorio\Nomadas51\Nomadas51\Nomadas51.Core.Domain\obj\Debug\netcoreapp3.1\Nomadas51.Core.Domain.genruntimeconfig.cache
