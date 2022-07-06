@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nomadas51.Core.Domain.Interfaces;
-using Nomadas51.Core.Domain.Models;
 
 namespace Nomadas51.Core.Infraestructure.Repository.Abstract
 {
-    public interface IDetailRepository<Entity, TransactionId> : ICreate<Entity>, ITransaction
+    public interface IMovementRepository<Entity, EntityId> : ICreate<Entity>,
+        IRead<Entity,EntityId>, ITransaction
     {
-
+        void Cancel(Guid entityId);
     }
 }

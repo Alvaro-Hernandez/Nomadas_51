@@ -9,49 +9,61 @@ using Nomadas51.Core.Infraestructure.Repository.Abstract;
 
 namespace Nomadas51.Core.Application.UseCases
 {
-    public class ReservaHabitacionUseCase : IBaseUseCase<Reserva_Habitacion, Guid>
+    public class ReservaHabitacionUseCase : IMovementUseCase<Reserva_Habitacion, Guid>
     {
-        private readonly IBaseRepository<Reserva_Habitacion, Guid> repository;
+        private readonly IMovementRepository<Reserva_Habitacion, Guid> repoReserva;
+        private readonly IBaseRepository<Habitacion, Guid> repoHabitacion;
+        private readonly IDetailRepository<ReservaDetalles, Guid> repoReservaDetalles;
 
-        public ReservaHabitacionUseCase(IBaseRepository<Reserva_Habitacion, Guid> repository)
+        public ReservaHabitacionUseCase(IMovementRepository<Reserva_Habitacion, Guid> repoReserva, IBaseRepository<Habitacion, Guid> repoHabitacion, IDetailRepository<ReservaDetalles, Guid> repoReservaDetalles)
         {
-            this.repository = repository;
+            this.repoReserva = repoReserva;
+            this.repoHabitacion = repoHabitacion;
+            this.repoReservaDetalles = repoReservaDetalles;
         }
+
+        public void Cancel(Guid entityId)
+        {
+           repoReserva.Cancel(entityId);
+           repoReserva.saveAllChanges();
+        }
+
         public Reserva_Habitacion Create(Reserva_Habitacion entity)
         {
-            if(entity != null)
+            if(entity == null)
             {
-                var result = repository.Create(entity);
-                repository.saveAllChanges();
-                return result;
+                throw new ArgumentNullException("La reserva es requerida");
             }
-            else
-            {
-                throw new Exception("Error. La Reserva de Habitacion no puede ser nula");
-            }
-        }
 
-        public void Delete(Guid entityId)
-        {
-            repository.Delete(entityId);
-            repository.saveAllChanges();
+            var reservaAgregada = repoReserva.Create(entity);
+
+            entity.ReservaDetalles.ForEach(detail =>
+            {
+                var seletedHabitacion = repoHabitacion.GetById(detail.id_habitacion);
+                if(seletedHabitacion == null)
+                {
+                    throw new NullReferenceException("Usted esta intentando reservar una habitacion que no existe");
+                }
+
+                detail.renta_por_dia = seletedHabitacion.renta_por_dia;
+                detail.costo_total = detail.renta_por_dia * detail.dias_reservados;
+
+                entity.dias_reservados = detail.dias_reservados;
+
+                entity.costo_total += detail.costo_total;
+            });
+            repoReserva.saveAllChanges();
+            return entity;
         }
 
         public List<Reserva_Habitacion> GetAll()
         {
-            return repository.GetAll();
+            return repoReserva.GetAll();
         }
 
         public Reserva_Habitacion GetById(Guid entityId)
         {
-            return repository.GetById(entityId);
-        }
-
-        public Reserva_Habitacion Update(Reserva_Habitacion entity)
-        {
-            repository.Update(entity);
-            repository.saveAllChanges();
-            return entity;
+            return repoReserva.GetById(entityId);
         }
     }
 }

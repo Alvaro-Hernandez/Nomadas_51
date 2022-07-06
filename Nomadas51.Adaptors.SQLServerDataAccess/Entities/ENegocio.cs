@@ -17,6 +17,12 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Entities
             builder
                 .HasOne(n => n.Usuario_admin)
                 .WithMany(n => n.Negocios);
+            builder
+                .HasMany(n => n.Reseña_Negocios)
+                .WithOne(n => n.Negocio);
+            builder
+                .HasMany(n => n.Habitacion)
+                .WithOne(n => n.Negocio);
         }
     }
 }

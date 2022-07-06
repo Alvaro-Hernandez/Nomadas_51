@@ -100,11 +100,46 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Migrations
                     b.ToTable("tb_negocio");
                 });
 
+            modelBuilder.Entity("Nomadas51.Core.Domain.Models.ReservaDetalles", b =>
+                {
+                    b.Property<Guid>("id_reserva")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("id_habitacion")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("Habitacionid_habitacion")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("Reserva_Habitacionid_reserva")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("costo_total")
+                        .HasColumnType("float");
+
+                    b.Property<int>("dias_reservados")
+                        .HasColumnType("int");
+
+                    b.Property<double>("renta_por_dia")
+                        .HasColumnType("float");
+
+                    b.HasKey("id_reserva", "id_habitacion");
+
+                    b.HasIndex("Habitacionid_habitacion");
+
+                    b.HasIndex("Reserva_Habitacionid_reserva");
+
+                    b.ToTable("tb_reserva_detalles");
+                });
+
             modelBuilder.Entity("Nomadas51.Core.Domain.Models.Reserva_Habitacion", b =>
                 {
                     b.Property<Guid>("id_reserva")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("cancelado")
+                        .HasColumnType("bit");
 
                     b.Property<double>("costo_total")
                         .HasColumnType("float");
@@ -118,15 +153,10 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Migrations
                     b.Property<DateTime>("fecha_salida")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("id_habitacion")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("id_usuario_cliente")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("id_reserva");
-
-                    b.HasIndex("id_habitacion");
 
                     b.HasIndex("id_usuario_cliente");
 
@@ -251,21 +281,28 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Migrations
                     b.Navigation("Usuario_admin");
                 });
 
-            modelBuilder.Entity("Nomadas51.Core.Domain.Models.Reserva_Habitacion", b =>
+            modelBuilder.Entity("Nomadas51.Core.Domain.Models.ReservaDetalles", b =>
                 {
                     b.HasOne("Nomadas51.Core.Domain.Models.Habitacion", "Habitacion")
-                        .WithMany("Reserva_Habitacion")
-                        .HasForeignKey("id_habitacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("ReservaDetalles")
+                        .HasForeignKey("Habitacionid_habitacion");
 
+                    b.HasOne("Nomadas51.Core.Domain.Models.Reserva_Habitacion", "Reserva_Habitacion")
+                        .WithMany("ReservaDetalles")
+                        .HasForeignKey("Reserva_Habitacionid_reserva");
+
+                    b.Navigation("Habitacion");
+
+                    b.Navigation("Reserva_Habitacion");
+                });
+
+            modelBuilder.Entity("Nomadas51.Core.Domain.Models.Reserva_Habitacion", b =>
+                {
                     b.HasOne("Nomadas51.Core.Domain.Models.Usuario_Cliente", "Usuario_Cliente")
                         .WithMany("Reserva_Habitacion")
                         .HasForeignKey("id_usuario_cliente")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Habitacion");
 
                     b.Navigation("Usuario_Cliente");
                 });
@@ -293,7 +330,7 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Migrations
                 {
                     b.Navigation("Habitacion_Imagenes");
 
-                    b.Navigation("Reserva_Habitacion");
+                    b.Navigation("ReservaDetalles");
                 });
 
             modelBuilder.Entity("Nomadas51.Core.Domain.Models.Negocio", b =>
@@ -301,6 +338,11 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Migrations
                     b.Navigation("Habitacion");
 
                     b.Navigation("Reseña_Negocios");
+                });
+
+            modelBuilder.Entity("Nomadas51.Core.Domain.Models.Reserva_Habitacion", b =>
+                {
+                    b.Navigation("ReservaDetalles");
                 });
 
             modelBuilder.Entity("Nomadas51.Core.Domain.Models.Usuario_Admin", b =>

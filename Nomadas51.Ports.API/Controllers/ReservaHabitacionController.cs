@@ -18,9 +18,11 @@ namespace Nomadas51.Ports.API.Controllers
         {
             NomadasDB db = new NomadasDB();
             //Instancia al contexto de la base de datos
-            ReservaHabitacionRepository repository = new ReservaHabitacionRepository(db);
-            //Llamando al repositorio concrento y mandando como argumento al contexto
-            ReservaHabitacionUseCase service = new ReservaHabitacionUseCase(repository);
+            ReservaHabitacionRepository repoReserva = new ReservaHabitacionRepository(db);
+            HabitacionRepository repoHabitacion = new HabitacionRepository(db);
+            ReservaDetallesRepository repoDetalle = new ReservaDetallesRepository(db);
+            //Llamando al repositorio concreto y mandando como argumento al contexto
+            ReservaHabitacionUseCase service = new ReservaHabitacionUseCase(repoReserva, repoHabitacion, repoDetalle);
             //Define el servicio y pasando como servicio el respositorio
             return service;
         }
@@ -47,22 +49,9 @@ namespace Nomadas51.Ports.API.Controllers
         {
             ReservaHabitacionUseCase service = CreateService();
 
-            var result = service.Create(reserva_Habitacion);
+            service.Create(reserva_Habitacion);
 
-            return Ok(result);
-        }
-
-        // PUT api/<ReservaHabitacionController>/5
-        [HttpPut("{id}")]
-        public ActionResult Put(Guid id, [FromBody] Reserva_Habitacion reserva_Habitacion)
-        {
-            ReservaHabitacionUseCase service = CreateService();
-
-            reserva_Habitacion.id_reserva = id;
-
-            service.Update(reserva_Habitacion);
-
-            return Ok("Reserva Editada Exitosamente");
+            return Ok("Venta Agregada Correctamente");
         }
 
         // DELETE api/<ReservaHabitacionController>/5
@@ -71,7 +60,7 @@ namespace Nomadas51.Ports.API.Controllers
         {
             ReservaHabitacionUseCase service = CreateService();
             
-            service.Delete(id);
+            service.Cancel(id);
 
             return Ok("Reserva Eliminada Exitosamente");
         }

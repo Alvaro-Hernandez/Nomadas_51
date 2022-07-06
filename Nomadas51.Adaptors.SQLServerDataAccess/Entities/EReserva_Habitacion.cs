@@ -17,8 +17,8 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Entities
             builder.HasKey(rh => rh.id_reserva);
 
             builder
-                .HasOne(rh => rh.Habitacion)
-                .WithMany(rh => rh.Reserva_Habitacion);
+                .HasMany(rh => rh.ReservaDetalles)
+                .WithOne(rh => rh.Reserva_Habitacion);
 
             builder
                 .HasOne(rh => rh.Usuario_Cliente)

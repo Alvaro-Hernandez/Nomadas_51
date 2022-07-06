@@ -9,7 +9,7 @@ using Nomadas51.Core.Domain.Models;
 
 namespace Nomadas51.Adaptors.SQLServerDataAccess.Entities
 {
-    internal class EHabitacion_Imagenes : IEntityTypeConfiguration<Habitacion_Imagenes>
+    public class EHabitacion_Imagenes : IEntityTypeConfiguration<Habitacion_Imagenes>
     {
         public void Configure(EntityTypeBuilder<Habitacion_Imagenes> builder)
         {

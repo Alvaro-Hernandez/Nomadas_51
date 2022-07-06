@@ -20,6 +20,7 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Contexts
         public DbSet<Reserva_Habitacion> Reserva_Habitaciones { get; set; }
         public DbSet<Reseña_Negocio> Reseña_Negocios { get; set; }
         public DbSet<Usuario_Admin> Usuarios_Admin { get; set; }
+        public DbSet<ReservaDetalles> ReservaDetalles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -31,6 +32,7 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Contexts
             builder.ApplyConfiguration(new ENegocio());
             builder.ApplyConfiguration(new EHabitacion_Imagenes());
             builder.ApplyConfiguration(new EHabitacion());
+            builder.ApplyConfiguration(new EReservaDetalles());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

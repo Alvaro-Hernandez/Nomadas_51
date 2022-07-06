@@ -7,6 +7,6 @@ namespace Nomadas51.Adaptors.SQLServerDataAccess.Utils
     class GlobalSetting
     {
         public static string sqlServerConnectionString =
-            @"Data Source=ALVARO-HERNANDE\ALVAROHERNANDEZ;Initial Catalog=Nomadas51DB;Integrated Security=True;";
+            @"Data Source=ALVARO-HERNANDE\ALVAROHERNANDEZ;Initial Catalog= NomadasDB;Integrated Security=True;";
     }
 }
