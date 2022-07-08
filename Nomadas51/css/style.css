@@ -1,0 +1,150 @@
+@import url('https:fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   min-height: 100vh;
+   background: url("../img/fondo3.jpeg");
+   background-size: 100% 100%; 
+   background-attachment: fixed;
+}
+
+.txt_welcome{
+    position: absolute;
+    color: rgb(72 85 102);
+    font-size: 3.5em;
+    margin-top: -40%;
+    text-shadow: 0.1em 0.1em 0.2em rgb(183, 183, 183);
+}
+
+.txt_btn{
+    position: absolute;
+    margin-top: 40%;
+    margin-left: -50%;
+    color: azure;
+    font-size: 2.3em;
+    /* El margin en pantallas mas grandes es de 30% en el top */
+}
+
+.txt_btn2{
+    position: absolute;
+    margin-top: 40%;
+    margin-right: -50%;
+    font-size: 2.3em;
+    color: azure;
+    /* El margin en pantallas mas grandes es de 30% en el top
+        pantallas pequeñas es de 40%*/
+}
+
+.box{
+    position: relative;
+    margin-top: 100px;
+    width: 350px;
+    /* Para pantallas grandes el tamaño es de 400px proporcional 
+        en pantallas mas pequeñas es de 350px*/
+    height: 350px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 20%;
+    overflow: hidden;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    inset: -10px 120px;
+    background: linear-gradient(315deg,#f8b602,#bc321c);
+    transition: 0.5s;
+    animation: animacion 4s linear infinite;
+}
+
+.box:hover::before{
+    inset: -20px 40px;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background: rgba(229, 186, 13, 0.998);
+    border-radius: 20%;
+    z-index: 1;
+}
+.content{
+    position: absolute;
+    inset: 30px;
+    border: 4px solid rgba(255, 255, 255, 0.926);
+    z-index: 3;
+    border-radius:20%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content img{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.box:hover .content img{
+    opacity: 0;
+}
+
+.content h2{
+    position: relative;
+    font-size: 1.5em;
+    text-align: center;
+    color: aliceblue;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.content span{
+    color: rgb(70, 95, 116);
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.content a{
+    position: relative;
+    margin-top: 12px;
+    border-radius: 15px;
+    padding: 20px 20px;
+    background: rgb(70, 95, 116);
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.content a:hover{
+    letter-spacing: 0.2em;
+}
+
+@keyframes animacion{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
